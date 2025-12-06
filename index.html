@@ -100,8 +100,8 @@
         class="fixed inset-0 bg-black/60 z-[60] opacity-0 invisible sidebar-overlay backdrop-blur-sm"></div>
     <aside id="sidebar"
         class="fixed top-0 left-0 bottom-0 w-64 bg-slate-900 border-r border-slate-700 z-[70] transform -translate-x-full sidebar flex flex-col shadow-2xl">
-        <div class="p-6 border-b border-slate-700">
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <div class="p-4 border-b border-slate-700">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
                 <span class="text-primary">📚</span> Daftar Sampel
             </h2>
         </div>
@@ -115,12 +115,12 @@
 
         <!-- Main Sentence Card -->
         <div
-            class="w-full max-w-2xl glass-panel rounded-2xl p-8 mb-2 text-center shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
+            class="w-full max-w-2xl glass-panel rounded-2xl p-6 mb-2 text-center shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
             <h2 id="main-arabic-text"
-                class="font-arabic text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-300 leading-relaxed py-2 min-h-[4rem]">
+                class="font-arabic text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-300 leading-relaxed py-2 min-h-[3.5rem]">
                 <!-- Arabic text will be loaded here -->
             </h2>
-            <p id="main-transliteration" class="text-lg text-slate-400 font-light tracking-wide min-h-[1.75rem]">
+            <p id="main-transliteration" class="text-base text-slate-400 font-light tracking-wide min-h-[1.5rem]">
                 <!-- Transliteration will be loaded here -->
             </p>
         </div>
@@ -137,13 +137,13 @@
             </div>
 
             <div class="px-6 pb-4 border-b border-slate-700/50 flex-shrink-0">
-                <h3 class="text-2xl font-bold flex items-center gap-2">
+                <h3 class="text-xl font-bold flex items-center gap-2">
                     <span class="text-accent">✨</span> Analisis I'rab
                 </h3>
             </div>
 
             <!-- Scrollable Content -->
-            <div id="drawer-content" class="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar pb-32">
+            <div id="drawer-content" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar pb-28">
                 <!-- Content will be loaded here -->
                 <div class="flex items-center justify-center h-full text-slate-400 animate-pulse">
                     Memuat data...
@@ -157,7 +157,7 @@
         class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent pointer-events-none">
         <div class="max-w-3xl mx-auto flex gap-4 pointer-events-auto">
             <button onclick="prevSample()" id="btn-prev"
-                class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-4 rounded-xl shadow-lg border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
+                class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl shadow-lg border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     class="h-5 w-5 transform group-hover:-translate-x-1 transition-transform" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
@@ -166,7 +166,7 @@
                 Kembali
             </button>
             <button onclick="nextSample()" id="btn-next"
-                class="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-4 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
+                class="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-3 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
                 Lanjut
                 <svg xmlns="http://www.w3.org/2000/svg"
                     class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none"
@@ -222,7 +222,7 @@
             list.innerHTML = '';
             for (let i = 1; i <= totalSamples; i++) {
                 const btn = document.createElement('button');
-                btn.className = `w-full text-left p-3 rounded-lg transition-colors ${i === currentSampleId ? 'bg-primary/20 text-primary border border-primary/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`;
+                btn.className = `w-full text-left p-2 rounded-lg transition-colors ${i === currentSampleId ? 'bg-primary/20 text-primary border border-primary/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`;
                 btn.innerHTML = `<span class="font-bold mr-2">#${i}</span> Sampel ${i}`;
                 btn.onclick = () => {
                     loadData(i);
@@ -274,17 +274,17 @@
                 const itemHtml = `
                 <div class="group animate-fade-in-up" style="animation-delay: ${index * 100}ms">
                     <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-full bg-${index % 2 === 0 ? 'primary' : 'accent'}/20 flex items-center justify-center text-${index % 2 === 0 ? 'primary' : 'accent'} font-bold text-xl border border-${index % 2 === 0 ? 'primary' : 'accent'}/30 shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-${index % 2 === 0 ? 'primary' : 'accent'}/20 flex items-center justify-center text-${index % 2 === 0 ? 'primary' : 'accent'} font-bold text-lg border border-${index % 2 === 0 ? 'primary' : 'accent'}/30 shrink-0">
                             ${item.id}
                         </div>
                         <div class="flex-1">
-                            <h4 class="font-arabic text-3xl font-bold text-white mb-2 text-right dir-rtl">${item.word}</h4>
+                            <h4 class="font-arabic text-2xl font-bold text-white mb-2 text-right dir-rtl">${item.word}</h4>
                             
                             <div class="space-y-3">
                                 ${item.details.map(detail => `
-                                <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-${index % 2 === 0 ? 'primary' : 'accent'}/50 transition-colors">
+                                <div class="bg-slate-800/50 rounded-xl p-3 border border-slate-700/50 hover:border-${index % 2 === 0 ? 'primary' : 'accent'}/50 transition-colors">
                                     <span class="text-xs font-bold text-${index % 2 === 0 ? 'primary' : 'accent'} uppercase tracking-wider block mb-1">${detail.label}</span>
-                                    <p class="font-arabic text-xl text-slate-200 text-right dir-rtl ${detail.value.length > 50 ? 'leading-loose' : ''}">${detail.value}</p>
+                                    <p class="font-arabic text-lg text-slate-200 text-right dir-rtl ${detail.value.length > 50 ? 'leading-loose' : ''}">${detail.value}</p>
                                 </div>
                                 `).join('')}
                             </div>
