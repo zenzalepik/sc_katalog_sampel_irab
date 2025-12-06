@@ -1,0 +1,43 @@
+{
+    "id": 1,
+    "arabic": "يَذْهَبُ زَيْدٌ",
+    "transliteration": "Yadzhabu Zaidun",
+    "analysis": [
+        {
+            "id": 1,
+            "word": "يَذْهَبُ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "فِعْلٌ مُضَارِعٌ"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَرْفُوعٌ"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "word": "زَيْدٌ",
+            "details": [
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "فَاعِلٌ"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَرْفُوعٌ"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
+                }
+            ]
+        }
+    ]
+}
