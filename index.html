@@ -92,7 +92,14 @@
             </svg>
         </button>
         <div class="text-sm font-bold tracking-widest uppercase text-slate-400">Katalog I'rab</div>
-        <div class="w-10"></div> <!-- Spacer for centering -->
+        <button onclick="toggleFullScreen()" id="btn-fullscreen"
+            class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+        </button>
     </nav>
 
     <!-- Sidebar Navigation -->
@@ -153,8 +160,8 @@
     </div>
 
     <!-- Fixed Bottom Navigation -->
-    <div
-        class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent pointer-events-none">
+    <div id="bottom-nav"
+        class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent pointer-events-none transition-transform duration-300">
         <div class="max-w-3xl mx-auto flex gap-4 pointer-events-auto">
             <button onclick="prevSample()" id="btn-prev"
                 class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl shadow-lg border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
@@ -312,6 +319,47 @@
             }
         `;
         document.head.appendChild(style);
+
+        // Full Screen Logic
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        function updateFullScreenUI() {
+            const btn = document.getElementById('btn-fullscreen');
+            const bottomNav = document.getElementById('bottom-nav');
+            const isFullScreen = !!document.fullscreenElement;
+
+            if (isFullScreen) {
+                // Change icon to Exit Full Screen
+                btn.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                `;
+                // Hide bottom nav
+                bottomNav.classList.add('translate-y-full');
+            } else {
+                // Change icon to Enter Full Screen
+                btn.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                    </svg>
+                `;
+                // Show bottom nav
+                bottomNav.classList.remove('translate-y-full');
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullScreenUI);
 
         // Init
         loadData(1);
