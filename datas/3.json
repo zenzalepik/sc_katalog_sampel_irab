@@ -1,33 +1,43 @@
 {
-    "id": 3,
-    "arabic": "الْعِلْمُ نُورٌ",
-    "transliteration": "Al-'ilmu Nuurun",
+    "id": 6,
+    "arabic": "لَنْ يَذْهَبَ زَيْدٌ",
+    "transliteration": "Lan yadzhaba Zaidun",
     "analysis": [
         {
             "id": 1,
-            "word": "الْعِلْمُ",
+            "word": "لَنْ",
             "details": [
                 {
-                    "label": "Posisi (Mahal)",
-                    "value": "مُبْتَدَأٌ"
-                },
-                {
-                    "label": "Status (I'rab)",
-                    "value": "مَرْفُوعٌ"
-                },
-                {
-                    "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
+                    "label": "Jenis Kata",
+                    "value": "حَرْفُ نَصْبٍ"
                 }
             ]
         },
         {
             "id": 2,
-            "word": "نُورٌ",
+            "word": "يَذْهَبَ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "فِعْلٌ مُضَارِعٌ"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَنْصُوبٌ بــ(لَنْ)"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ نَصْبِهِ الْفَتْحَةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "word": "زَيْدٌ",
             "details": [
                 {
                     "label": "Posisi (Mahal)",
-                    "value": "خَبَرٌ"
+                    "value": "فَاعِلٌ"
                 },
                 {
                     "label": "Status (I'rab)",
@@ -35,7 +45,7 @@
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ"
                 }
             ]
         }

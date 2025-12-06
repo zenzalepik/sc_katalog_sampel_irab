@@ -1,28 +1,28 @@
 {
-    "id": 5,
-    "arabic": "كَتَبَ مُحَمَّدٌ الرِّسَالَةَ",
-    "transliteration": "Kataba Muhammadun Ar-risalata",
+    "id": 8,
+    "arabic": "جَاءَ الْفَتَى",
+    "transliteration": "Jaa’a Al-Fataa",
     "analysis": [
         {
             "id": 1,
-            "word": "كَتَبَ",
+            "word": "جَاءَ",
             "details": [
                 {
                     "label": "Jenis Kata",
                     "value": "فِعْلٌ مَاضٍ"
                 },
                 {
-                    "label": "Status",
+                    "label": "Status (I'rab)",
                     "value": "مَبْنِيٌّ عَلَى الْفَتْحِ"
                 }
             ]
         },
         {
             "id": 2,
-            "word": "مُحَمَّدٌ",
+            "word": "الْفَتَى",
             "details": [
                 {
-                    "label": "Posisi",
+                    "label": "Posisi (Mahal)",
                     "value": "فَاعِلٌ"
                 },
                 {
@@ -31,25 +31,7 @@
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "word": "الرِّسَالَةَ",
-            "details": [
-                {
-                    "label": "Posisi",
-                    "value": "مَفْعُولٌ بِهِ"
-                },
-                {
-                    "label": "Status (I'rab)",
-                    "value": "مَنْصُوبٌ"
-                },
-                {
-                    "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ نَصْبِهِ الْفَتْحَةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْأَلِفِ لِلتَّعَذُّرِ"
                 }
             ]
         }
