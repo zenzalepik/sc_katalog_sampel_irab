@@ -23,7 +23,11 @@
                 },
                 {
                     "label": "Status (I'rab)",
-                    "value": "مَجْزُومٌ بــ(لَمْ)"
+                    "value": "مَجْزُومٌ"
+                },
+                {
+                    "label": "Sebab (Ta'lil)",
+                    "value": "بِـ (لَمْ)"
                 },
                 {
                     "label": "Tanda I'rab",
