@@ -1,0 +1,50 @@
+{
+    "id": 12,
+    "arabic": "مَرَرْتُ بِالْقَاضِي",
+    "transliteration": "Marartu Bil-Qadhi",
+    "translation": "Aku berpapasan dengan Hakim itu",
+    "analysis": [
+        {
+            "id": 1,
+            "word": "مَرَرْتُ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "فِعْلٌ مَاضٍ وَفَاعِلٌ",
+                    "terjemah": "Kata Kerja Lampau dan Pelakunya"
+                },
+                {
+                    "label": "Analisis Fi'il",
+                    "value": "مَرَرَ: فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى السُّكُونِ لِاتِّصَالِهِ بِضَمِيرِ الرَّفْعِ الْمُتَحَرِّكِ",
+                    "terjemah": "Marara: Fi'il Madhi mabni sukun karena bersambung dengan dhamir rafa' berharakat"
+                },
+                {
+                    "label": "Analisis Fa'il",
+                    "value": "التَّاءُ: ضَمِيرٌ مُتَّصِلٌ مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ رَفْعٍ فَاعِلٌ",
+                    "terjemah": "Ta': Dhamir muttashil mabni dhommah menempati posisi Rafa' sebagai Fa'il"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "word": "بِالْقَاضِي",
+            "details": [
+                {
+                    "label": "Huruf Jar",
+                    "value": "الْبَاءُ: حَرْفُ جَرٍّ",
+                    "terjemah": "Ba: Huruf Jar"
+                },
+                {
+                    "label": "Isim Majrur",
+                    "value": "الْقَاضِي: اِسْمٌ مَجْرُورٌ بِالْبَاءِ",
+                    "terjemah": "Al-Qadhi: Isim yang dijarkan oleh Ba"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ جَرِّهِ الْكَسْرَةُ الْمُقَدَّرَةُ عَلَى الْيَاءِ لِلثِّقَلِ",
+                    "terjemah": "Tanda jar-nya adalah kasrah yang dikira-kira di atas Ya karena berat (Tsiqol)"
+                }
+            ]
+        }
+    ]
+}

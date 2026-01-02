@@ -1,0 +1,71 @@
+{
+    "id": 16,
+    "arabic": "جَاءَ غُلَامِيْ وَرَأَيْتُ غُلَامِيْ وَمَرَرْتُ بِغُلَامِيْ",
+    "transliteration": "Jaa-a Ghulamii, Wa Ra-aitu Ghulamii, Wa Marartu Bi-Ghulamii",
+    "translation": "Pembantuku telah datang, dan aku melihat pembantuku, dan aku berpapasan dengan pembantuku",
+    "analysis": [
+        {
+            "id": 1,
+            "word": "غُلَامِيْ (1)",
+            "details": [
+                {
+                    "label": "Konteks",
+                    "value": "جَاءَ غُلَامِيْ (Fa'il)",
+                    "terjemah": "Konteks kalimat pertama (sebagai Subjek)"
+                },
+                {
+                    "label": "Posisi",
+                    "value": "فَاعِلٌ مَرْفُوعٌ",
+                    "terjemah": "Fa'il (Subjek) yang Marfu'"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى مَا قَبْلَ الْيَاءِ، مَنَعَ مِنْ ظُهُورِهَا اشْتِغَالُ الْمَحَلِّ بِحَرَكَةِ الْمُنَاسَبَةِ",
+                    "terjemah": "Tanda rafa'-nya dhommah yang dikira-kira pada huruf sebelum Ya, terhalang munculnya karena tempatnya sibuk dengan harakat yang sesuai (kasrah)"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "word": "غُلَامِيْ (2)",
+            "details": [
+                {
+                    "label": "Konteks",
+                    "value": "رَأَيْتُ غُلَامِيْ (Maf'ul Bih)",
+                    "terjemah": "Konteks kalimat kedua (sebagai Objek)"
+                },
+                {
+                    "label": "Posisi",
+                    "value": "مَفْعُولٌ بِهِ مَنْصُوبٌ",
+                    "terjemah": "Maf'ul Bih (Objek) yang Manshub"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ نَصْبِهِ الْفَتْحَةُ الْمُقَدَّرَةُ عَلَى مَا قَبْلَ الْيَاءِ... (نَفْسُ الْإِعْرَابِ)",
+                    "terjemah": "Tanda nashab-nya fathah yang dikira-kira pada huruf sebelum Ya... (alasannya sama)"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "word": "بِغُلَامِيْ",
+            "details": [
+                {
+                    "label": "Konteks",
+                    "value": "مَرَرْتُ بِغُلَامِيْ (Majrur)",
+                    "terjemah": "Konteks kalimat ketiga (sebagai Majrur)"
+                },
+                {
+                    "label": "Posisi",
+                    "value": "اِسْمٌ مَجْرُورٌ بِالْبَاءِ",
+                    "terjemah": "Isim yang dijarkan oleh Ba"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ جَرِّهِ الْكَسْرَةُ الْمُقَدَّرَةُ عَلَى مَا قَبْلَ الْيَاءِ... (نَفْسُ الْإِعْرَابِ)",
+                    "terjemah": "Tanda jar-nya kasrah yang dikira-kira pada huruf sebelum Ya... (alasannya sama/mengikuti munasabah)"
+                }
+            ]
+        }
+    ]
+}

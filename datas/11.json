@@ -1,8 +1,8 @@
 {
-    "id": 8,
-    "arabic": "جَاءَ الْفَتَى",
-    "transliteration": "Jaa’a Al-Fataa",
-    "translation": "Pemuda itu telah datang",
+    "id": 11,
+    "arabic": "جَاءَ الْقَاضِي",
+    "transliteration": "Jaa-a Al-Qadhi",
+    "translation": "Hakim itu telah datang",
     "analysis": [
         {
             "id": 1,
@@ -14,26 +14,20 @@
                     "terjemah": "Kata Kerja Lampau (Fi'il Madhi)"
                 },
                 {
-                    "label": "Status (I'rab)",
+                    "label": "Status",
                     "value": "مَبْنِيٌّ عَلَى الْفَتْحِ",
-                    "terjemah": "Mabni (tetap) di atas harakat Fathah"
-                },
-                {
-                    "label": "Keterangan",
-                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ",
-                    "laMahallaLahu": true,
-                    "terjemah": "Tidak ada kedudukan dalam I'rab baginya"
+                    "terjemah": "Mabni di atas Fathah"
                 }
             ]
         },
         {
             "id": 2,
-            "word": "الْفَتَى",
+            "word": "الْقَاضِي",
             "details": [
                 {
                     "label": "Posisi (Mahal)",
                     "value": "فَاعِلٌ",
-                    "terjemah": "Subjek (Fa'il)"
+                    "terjemah": "Subjek/Pelaku (Fa'il)"
                 },
                 {
                     "label": "Status (I'rab)",
@@ -42,8 +36,8 @@
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْأَلِفِ لِلتَّعَذُّرِ",
-                    "terjemah": "Tanda rafa'-nya adalah dhommah yang dikira-kira di atas Alif karena udzur"
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْيَاءِ لِلثِّقَلِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang dikira-kira di atas Ya karena berat (Tsiqol)"
                 }
             ]
         }

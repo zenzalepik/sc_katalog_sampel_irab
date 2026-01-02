@@ -1,0 +1,56 @@
+{
+    "id": 17,
+    "arabic": "جَاءَ غُلَامٌ وَرَأَيْتُ غُلَامًا وَمَرَرْتُ بِغُلَامٍ",
+    "transliteration": "Jaa-a Ghulamun, Wa Ra-aitu Ghulaman, Wa Marartu Bi-Ghulamin",
+    "translation": "Seorang pembantu telah datang, aku melihat seorang pembantu, dan aku berpapasan dengan seorang pembantu",
+    "analysis": [
+        {
+            "id": 1,
+            "word": "غُلَامٌ",
+            "details": [
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "فَاعِلٌ مَرْفُوعٌ",
+                    "terjemah": "Fa'il (Subjek) yang Marfu'"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang nampak di akhirnya"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "word": "غُلَامًا",
+            "details": [
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "مَفْعُولٌ بِهِ مَنْصُوبٌ",
+                    "terjemah": "Maf'ul Bih (Objek) yang Manshub"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ نَصْبِهِ الْfَتْحَةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda nashab-nya adalah fathah yang nampak di akhirnya"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "word": "بِغُلَامٍ",
+            "details": [
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "اِسْمٌ مَجْرُورٌ بِالْبَاءِ",
+                    "terjemah": "Isim yang dijarkan oleh Ba"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ جَرِّهِ الْكَسْرَةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda jar-nya adalah kasrah yang nampak di akhirnya"
+                }
+            ]
+        }
+    ]
+}

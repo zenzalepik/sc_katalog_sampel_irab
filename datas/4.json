@@ -10,7 +10,8 @@
             "details": [
                 {
                     "label": "Jenis Kata",
-                    "value": "حَرْفُ جَزْمٍ وَنَفْيٍ لِلْمَاضِي"
+                    "value": "حَرْفُ جَزْمٍ وَنَفْيٍ لِلْمَاضِي",
+                    "terjemah": "Huruf Jazm dan Nafi (Penidaan) untuk masa lampau"
                 }
             ]
         },
@@ -20,19 +21,23 @@
             "details": [
                 {
                     "label": "Jenis Kata",
-                    "value": "فِعْلٌ مُضَارِعٌ"
+                    "value": "فِعْلٌ مُضَارِعٌ",
+                    "terjemah": "Kata Kerja Sekarang/Akan Datang (Fi'il Mudhari')"
                 },
                 {
                     "label": "Status (I'rab)",
-                    "value": "مَجْزُومٌ"
+                    "value": "مَجْزُومٌ",
+                    "terjemah": "Majzum (Jazm)"
                 },
                 {
                     "label": "Sebab (Ta'lil)",
-                    "value": "بِـ (لَمْ)"
+                    "value": "بِـ (لَمْ)",
+                    "terjemah": "Disebabkan oleh (Lam)"
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ جَزْمِهِ السُّكُونُ الظَّاهِرُ عَلَى آخِرِهِ"
+                    "value": "وَعَلَامَةُ جَزْمِهِ السُّكُونُ الظَّاهِرُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda jazm-nya adalah sukun yang nampak diakhirnya"
                 }
             ]
         },
@@ -42,15 +47,18 @@
             "details": [
                 {
                     "label": "Posisi (Mahal)",
-                    "value": "فَاعِلٌ"
+                    "value": "فَاعِلٌ",
+                    "terjemah": "Subjek (Fa'il)"
                 },
                 {
                     "label": "Status (I'rab)",
-                    "value": "مَرْفُوعٌ"
+                    "value": "مَرْفُوعٌ",
+                    "terjemah": "Marfu' (Rafa')"
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَىٰ آخِرِهِ"
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَىٰ آخِرِهِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang nampak di akhirnya"
                 }
             ]
         }

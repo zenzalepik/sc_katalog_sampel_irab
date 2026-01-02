@@ -1,0 +1,98 @@
+{
+    "id": 14,
+    "arabic": "يَدْعُو زَيْدٌ إِلَى الْحَقِّ وَيَقْضِي بِهِ",
+    "transliteration": "Yad'u Zaidun Ilal-Haqqi Wa Yaqdhi Bihi",
+    "translation": "Zaid menyeru kepada kebenaran dan memutuskan dengannya",
+    "analysis": [
+        {
+            "id": 1,
+            "word": "يَدْعُو",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "فِعْلٌ مُضَارِعٌ",
+                    "terjemah": "Kata Kerja Sekarang (Fi'il Mudhari')"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَرْفُوعٌ",
+                    "terjemah": "Marfu' (Rafa')"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْوَاوِ لِلثِّقَلِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang dikira-kira di atas Wau karena berat"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "word": "زَيْدٌ",
+            "details": [
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "فَاعِلٌ",
+                    "terjemah": "Subjek (Fa'il)"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَرْفُوعٌ",
+                    "terjemah": "Marfu' (Rafa')"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang nampak di akhirnya"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "word": "إِلَى الْحَقِّ",
+            "details": [
+                {
+                    "label": "Jar Majrur",
+                    "value": "إِلَى: حَرْفُ جَرٍّ، الْحَقِّ: اِسْمٌ مَجْرُورٌ",
+                    "terjemah": "Ila: Huruf Jar, Al-Haqqi: Isim Majrur"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ جَرِّ الْحَقِّ الْكَسْرَةُ الظَّاهِرَةُ",
+                    "terjemah": "Tanda jar Al-Haqq adalah kasrah yang nampak"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "word": "وَيَقْضِي",
+            "details": [
+                {
+                    "label": "Athof",
+                    "value": "الْوَاوُ حَرْفُ عَطْفٍ",
+                    "terjemah": "Wau adalah Huruf Athof (Kata Sambung)"
+                },
+                {
+                    "label": "Fi'il",
+                    "value": "يَقْضِي: فِعْلٌ مُضَارِعٌ مَرْفُوعٌ لِأَنَّهُ مَعْطُوفٌ عَلَى (يَدْعُو)",
+                    "terjemah": "Yaqdhi: Fi'il Mudhari' Marfu' karena dia diathofkan (disambungkan) kepada (Yad'u)"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْيَاءِ لِلثِّقَلِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang dikira-kira di atas Ya karena berat"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "word": "بِهِ",
+            "details": [
+                {
+                    "label": "Jar Majrur",
+                    "value": "الْبَاءُ حَرْفُ جَرٍّ، وَالْهَاءُ ضَمِيرٌ مَبْنِيٌّ فِي مَحَلِّ جَرٍّ",
+                    "terjemah": "Ba Huruf Jar, dan Ha adalah Dhamir Mabni menempati posisi Jar"
+                }
+            ]
+        }
+    ]
+}

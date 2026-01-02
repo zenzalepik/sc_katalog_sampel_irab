@@ -1,0 +1,81 @@
+{
+    "id": 10,
+    "arabic": "لَنْ يَخْشَى عَدُوَّهُ",
+    "transliteration": "Lan Yakhsya 'Aduwwahu",
+    "translation": "Dia tidak akan takut kepada musuhnya",
+    "analysis": [
+        {
+            "id": 1,
+            "word": "لَنْ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "حَرْفُ نَفْيٍ وَنَصْبٍ وَاسْتِقْبَالٍ",
+                    "terjemah": "Huruf Nafi (Penidaan), Nashab, dan Istiqbal (Masa Depan)"
+                },
+                {
+                    "label": "Status",
+                    "value": "مَبْنِيٌّ عَلَى السُّكُونِ",
+                    "terjemah": "Mabni di atas Sukun"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "word": "يَخْشَى",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "فِعْلٌ مُضَارِعٌ",
+                    "terjemah": "Kata Kerja Sekarang (Fi'il Mudhari')"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَنْصُوبٌ",
+                    "terjemah": "Manshub (Nashab)"
+                },
+                {
+                    "label": "Sebab",
+                    "value": "بِـ (لَنْ)",
+                    "terjemah": "Disebabkan oleh (Lan)"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ نَصْبِهِ الْفَتْحَةُ الْمُقَدَّرَةُ عَلَى الْأَلِفِ لِلتَّعَذُّرِ",
+                    "terjemah": "Tanda nashab-nya adalah fathah yang dikira-kira di atas Alif karena udzur"
+                },
+                {
+                    "label": "Fail",
+                    "value": "وَالْفَاعِلُ ضَمِيرٌ مُسْتَتِرٌ تَقدِيرُهُ هُوَ",
+                    "terjemah": "Dan pelakunya adalah dhamir yang tersembunyi, takdirnya 'Huwa' (Dia)"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "word": "عَدُوَّهُ",
+            "details": [
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "مَفْعُولٌ بِهِ",
+                    "terjemah": "Objek (Maf'ul Bih)"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَنْصُوبٌ",
+                    "terjemah": "Manshub (Nashab)"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ نَصْبِهِ الْفَتْحَةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda nashab-nya adalah fathah yang nampak di akhirnya"
+                },
+                {
+                    "label": "Keterangan",
+                    "value": "وَهُوَ مُضَافٌ، وَالْهَاءُ ضَمِيرٌ مُتَّصِلٌ مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ جَرٍّ مُضَافٌ إِلَيْهِ",
+                    "terjemah": "Dia sebagai Mudhaf, dan 'Ha' adalah Dhamir Muttashil yang mabni dhommah menempati posisi Jar sebagai Mudhaf Ilaihi"
+                }
+            ]
+        }
+    ]
+}

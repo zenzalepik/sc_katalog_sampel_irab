@@ -10,15 +10,18 @@
             "details": [
                 {
                     "label": "Posisi (Mahal)",
-                    "value": "مُبْتَدَأٌ"
+                    "value": "مُبْتَدَأٌ",
+                    "terjemah": "Subjek Awal (Mubtada')"
                 },
                 {
                     "label": "Status (I'rab)",
-                    "value": "مَرْفُوعٌ"
+                    "value": "مَرْفُوعٌ",
+                    "terjemah": "Marfu' (Rafa')"
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang nampak di akhirnya"
                 }
             ]
         },
@@ -28,15 +31,18 @@
             "details": [
                 {
                     "label": "Posisi (Mahal)",
-                    "value": "خَبَرٌ"
+                    "value": "خَبَرٌ",
+                    "terjemah": "Predikat (Khabar)"
                 },
                 {
                     "label": "Status (I'rab)",
-                    "value": "مَرْفُوعٌ"
+                    "value": "مَرْفُوعٌ",
+                    "terjemah": "Marfu' (Rafa')"
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ"
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang nampak di akhirnya"
                 }
             ]
         }

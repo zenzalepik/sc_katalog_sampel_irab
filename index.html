@@ -146,15 +146,16 @@
                 class="font-arabic text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-300 leading-relaxed py-2 min-h-[3.5rem]">
                 <!-- Arabic text will be loaded here -->
             </h2>
-            <p id="main-transliteration" class="text-base text-slate-400 font-light tracking-wide min-h-[1.5rem]">
-                <!-- Transliteration will be loaded here -->
-            </p>
+            <!-- <p id="main-transliteration" class="text-base text-slate-400 font-light tracking-wide min-h-[1.5rem]">
+            </p> -->
             <p id="main-translation" class="text-lg text-primary font-medium mt-3 hidden animate-fade-in-up">
                 <!-- Translation will be loaded here -->
             </p>
         </div>
 
     </main>
+
+
 
     <!-- Drawer / Bottom Sheet Container -->
     <div class="relative z-20 w-full max-w-3xl mx-auto flex-1 flex flex-col min-h-0 overflow-hidden">
@@ -165,7 +166,7 @@
                 <div class="w-12 h-1.5 bg-slate-600 rounded-full opacity-50"></div>
             </div>
 
-            <div class="px-6 pb-4 border-b border-slate-700/50 flex-shrink-0">
+            <div class="px-6 pb-4 border-b border-slate-700/50 flex-shrink-0 flex items-center justify-between">
                 <h3 class="text-xl font-bold flex items-center gap-2">
                     <span class="text-accent">✨</span> Analisis I'rab
                 </h3>
@@ -178,6 +179,35 @@
                     Memuat data...
                 </div>
             </div>
+
+            <footer class="text-center pb-6 z-10 relative">
+                <!-- Nav Bottom-->
+                <div class="flex items-center gap-4 px-4">
+                    <button onclick="prevSample()" id="btn-header-prev"
+                        class="flex-1 py-3 px-4 rounded-xl bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-300 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 font-medium"
+                        title="Sebelumnya">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Kembali
+                    </button>
+                    <button onclick="nextSample()" id="btn-header-next"
+                        class="flex-1 py-3 px-4 rounded-xl bg-primary/20 border border-primary/30 hover:bg-primary/30 text-primary hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 font-medium"
+                        title="Selanjutnya">
+                        Lanjut
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- <p class="text-slate-500 text-xs font-medium tracking-wide">
+                    &copy; 2026 Katalog I'rab. Dibuat dengan <span class="text-pink-500 animate-pulse">❤️</span> untuk
+                    Penuntut
+                    Ilmu.
+                </p> -->
+            </footer>
         </div>
     </div>
 
@@ -186,6 +216,8 @@
         <!-- Backdrop -->
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="toggleHelpModel()">
         </div>
+
+
 
         <!-- Modal Content -->
         <div
@@ -280,7 +312,7 @@
                         <!-- Footer: Contact (Inside Scrollable Area) -->
                         <div class="mt-8 pt-8 border-t border-slate-700/50 text-center">
                             <p class="text-slate-400 mb-3 font-medium">Butuh bantuan melalui whatsapp?</p>
-                            <a href="https://wa.me/6281234567890" target="_blank"
+                            <a href="https://wa.me/6285183369972" target="_blank"
                                 class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-8 rounded-full transition-transform active:scale-95 shadow-lg shadow-green-900/20 hover:shadow-green-900/30">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="currentColor">
@@ -323,7 +355,7 @@
             <script>
                 // State
                 let currentSampleId = 1;
-                const totalSamples = 8; // Update this when adding more samples
+                const totalSamples = 17; // Update this when adding more samples
                 let showTranslation = false;
 
                 // Sidebar Logic
@@ -353,12 +385,19 @@
                     const modal = document.getElementById('help-modal');
                     const bottomNav = document.getElementById('bottom-nav');
 
+                    if (!modal || !bottomNav) return;
+
                     if (modal.classList.contains('hidden')) {
                         modal.classList.remove('hidden');
                         bottomNav.classList.add('hidden');
                     } else {
                         modal.classList.add('hidden');
                         bottomNav.classList.remove('hidden');
+
+                        // Ensure it's visible if not in fullscreen
+                        if (!document.fullscreenElement) {
+                            bottomNav.classList.remove('translate-y-full');
+                        }
                     }
                 }
 
@@ -378,9 +417,16 @@
                 function updateButtons() {
                     const btnPrev = document.getElementById('btn-prev');
                     const btnNext = document.getElementById('btn-next');
+                    const headerPrev = document.getElementById('btn-header-prev');
+                    const headerNext = document.getElementById('btn-header-next');
 
-                    btnPrev.disabled = currentSampleId <= 1;
-                    btnNext.disabled = currentSampleId >= totalSamples;
+                    const isFirst = currentSampleId <= 1;
+                    const isLast = currentSampleId >= totalSamples;
+
+                    if (btnPrev) btnPrev.disabled = isFirst;
+                    if (btnNext) btnNext.disabled = isLast;
+                    if (headerPrev) headerPrev.disabled = isFirst;
+                    if (headerNext) headerNext.disabled = isLast;
                 }
 
                 function generateSampleList() {
@@ -472,16 +518,16 @@
 
                     data.analysis.forEach((item, index) => {
                         const itemHtml = `
-                <div class="group animate-fade-in-up" style="animation-delay: ${index * 100}ms">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-${index % 2 === 0 ? 'primary' : 'accent'}/20 flex items-center justify-center text-${index % 2 === 0 ? 'primary' : 'accent'} font-bold text-lg border border-${index % 2 === 0 ? 'primary' : 'accent'}/30 shrink-0">
-                            ${item.id}
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-arabic text-2xl font-bold text-white mb-2 text-right dir-rtl">${item.word}</h4>
-                            
-                            <div class="space-y-3">
-                                ${item.details.map(detail => {
+                        <div class="group animate-fade-in-up" style="animation-delay: ${index * 100}ms">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-${index % 2 === 0 ? 'primary' : 'accent'}/20 flex items-center justify-center text-${index % 2 === 0 ? 'primary' : 'accent'} font-bold text-lg border border-${index % 2 === 0 ? 'primary' : 'accent'}/30 shrink-0">
+                                    ${item.id}
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-arabic text-2xl font-bold text-white mb-2 text-right dir-rtl">${item.word}</h4>
+                                    
+                                    <div class="space-y-3">
+                                        ${item.details.map(detail => {
                             // Logic handle la_mahalla_lahu property or value
                             let originalValue = detail.value;
                             if (detail.hasOwnProperty('laMahallaLahu')) {
@@ -498,30 +544,32 @@
                             // Append Translation if Active
                             if (showTranslation && detail.terjemah) {
                                 contentHtml += `
-                                        <div class="mt-2 pt-2 border-t border-slate-700/50">
-                                            <p class="font-sans text-sm text-slate-300 text-left">${detail.terjemah}</p>
-                                        </div>
-                                        `;
+                                                <div class="mt-2 pt-2 border-t border-slate-700/50">
+                                                    <p class="font-sans text-sm text-slate-300 text-left">${detail.terjemah}</p>
+                                                </div>
+                                                `;
                             }
 
                             let labelClass = `text-${index % 2 === 0 ? 'primary' : 'accent'}`;
 
                             return `
-                                    <div class="bg-slate-800/50 rounded-xl p-3 border border-slate-700/50 hover:border-${index % 2 === 0 ? 'primary' : 'accent'}/50 transition-colors">
-                                        <span class="text-xs font-bold ${labelClass} uppercase tracking-wider block mb-1">${detail.label}</span>
-                                        ${contentHtml}
-                                    </div>
-                                    `;
+                                            <div class="bg-slate-800/50 rounded-xl p-3 border border-slate-700/50 hover:border-${index % 2 === 0 ? 'primary' : 'accent'}/50 transition-colors">
+                                                <span class="text-xs font-bold ${labelClass} uppercase tracking-wider block mb-1">${detail.label}</span>
+                                                ${contentHtml}
+                                            </div>
+                                            `;
                         }).join('')}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                ${index < data.analysis.length - 1 ? '<div class="w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-4"></div>' : ''}
-                `;
+                        ${index < data.analysis.length - 1 ? '<div class="w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-4"></div>' : ''}
+                        `;
                         container.insertAdjacentHTML('beforeend', itemHtml);
                     });
                 }
+
+
 
                 // Add simple fade-in animation
                 const style = document.createElement('style');

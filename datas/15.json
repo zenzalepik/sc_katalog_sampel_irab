@@ -1,0 +1,93 @@
+{
+    "id": 15,
+    "arabic": "لَنْ يَدْعُوَ زَيْدٌ إِلَى الْبَاطِلِ وَيَقْضِيَ",
+    "transliteration": "Lan Yad'uwa Zaidun Ilal-Bathili Wa Yaqdhiya",
+    "translation": "Zaid tidak akan menyeru kepada kebatilan dan tidak akan memutuskan (dengannya)",
+    "analysis": [
+        {
+            "id": 1,
+            "word": "لَنْ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "حَرْفُ نَفْيٍ وَنَصْبٍ وَاسْتِقْبَالٍ",
+                    "terjemah": "Huruf Nafi, Nashab, dan Istiqbal"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "word": "يَدْعُوَ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "فِعْلٌ مُضَارِعٌ",
+                    "terjemah": "Kata Kerja Sekarang (Fi'il Mudhari')"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَنْصُوبٌ بِلَنْ",
+                    "terjemah": "Manshub (Nashab) disebabkan oleh Lan"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ نَصْبِهِ الْفَتْحَةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda nashab-nya adalah fathah yang nampak di akhirnya (di atas Wau)"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "word": "زَيْدٌ",
+            "details": [
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "فَاعِلٌ",
+                    "terjemah": "Subjek (Fa'il)"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَرْفُوعٌ",
+                    "terjemah": "Marfu' (Rafa')"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "عَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang nampak"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "word": "إِلَى الْبَاطِلِ",
+            "details": [
+                {
+                    "label": "Jar Majrur",
+                    "value": "جَارٌّ وَمَجْرُورٌ مُتَعَلِّقَانِ بِـ (يَدْعُوَ)",
+                    "terjemah": "Jar dan Majrur, keduanya berkaitan dengan (Yad'uwa)"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "word": "وَيَقْضِيَ",
+            "details": [
+                {
+                    "label": "Athof",
+                    "value": "الْوَاوُ حَرْفُ عَطْفٍ",
+                    "terjemah": "Wau adalah Huruf Athof"
+                },
+                {
+                    "label": "Fi'il",
+                    "value": "يَقْضِيَ: فِعْلٌ مُضَارِعٌ مَنْصُوبٌ لِأَنَّهُ مَعْطُوفٌ عَلَى (يَدْعُوَ)",
+                    "terjemah": "Yaqdhiya: Fi'il Mudhari' Manshub karena diathofkan kepada (Yad'uwa)"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ نَصْبِهِ الْفَتْحَةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda nashab-nya adalah fathah yang nampak di akhirnya (di atas Ya)"
+                }
+            ]
+        }
+    ]
+}

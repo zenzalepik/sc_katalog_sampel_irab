@@ -1,0 +1,50 @@
+{
+    "id": 13,
+    "arabic": "رَأَيْتُ الْقَاضِيَ",
+    "transliteration": "Ra-aitu Al-Qadhiya",
+    "translation": "Aku melihat Hakim itu",
+    "analysis": [
+        {
+            "id": 1,
+            "word": "رَأَيْتُ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "فِعْلٌ مَاضٍ وَفَاعِلٌ",
+                    "terjemah": "Kata Kerja Lampau dan Pelakunya"
+                },
+                {
+                    "label": "Analisis Fi'il",
+                    "value": "رَأَى: فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى السُّكُونِ لِاتِّصَالِهِ بِضَمِيرِ الرَّفْعِ الْمُتَحَرِّكِ",
+                    "terjemah": "Ra-a: Fi'il Madhi mabni sukun karena bersambung dengan dhamir rafa' berharakat"
+                },
+                {
+                    "label": "Analisis Fa'il",
+                    "value": "التَّاءُ: ضَمِيرٌ مُتَّصِلٌ مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ رَفْعٍ فَاعِلٌ",
+                    "terjemah": "Ta': Dhamir muttashil mabni dhommah menempati posisi Rafa' sebagai Fa'il"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "word": "الْقَاضِيَ",
+            "details": [
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "مَفْعُولٌ بِهِ",
+                    "terjemah": "Objek (Maf'ul Bih)"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَنْصُوبٌ",
+                    "terjemah": "Manshub (Nashab)"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ نَصْبِهِ الْفَتْحَةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda nashab-nya adalah fathah yang nampak di akhirnya (Ringan)"
+                }
+            ]
+        }
+    ]
+}
