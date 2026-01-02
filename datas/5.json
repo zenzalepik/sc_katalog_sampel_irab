@@ -2,6 +2,7 @@
     "id": 8,
     "arabic": "جَاءَ الْفَتَى",
     "transliteration": "Jaa’a Al-Fataa",
+    "translation": "Pemuda itu telah datang",
     "analysis": [
         {
             "id": 1,
@@ -17,7 +18,8 @@
                 },
                 {
                     "label": "Keterangan",
-                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ"
+                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ",
+                    "laMahallaLahu": true
                 }
             ]
         },

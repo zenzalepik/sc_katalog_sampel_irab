@@ -92,14 +92,24 @@
             </svg>
         </button>
         <div class="text-sm font-bold tracking-widest uppercase text-slate-400">Katalog I'rab</div>
-        <button onclick="toggleFullScreen()" id="btn-fullscreen"
-            class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 text-white transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-            </svg>
-        </button>
+        <div class="flex gap-2">
+            <button onclick="toggleTranslation()" id="btn-translate"
+                class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                </svg>
+            </button>
+            <button onclick="toggleFullScreen()" id="btn-fullscreen"
+                class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+            </button>
+        </div>
     </nav>
 
     <!-- Sidebar Navigation -->
@@ -129,6 +139,9 @@
             </h2>
             <p id="main-transliteration" class="text-base text-slate-400 font-light tracking-wide min-h-[1.5rem]">
                 <!-- Transliteration will be loaded here -->
+            </p>
+            <p id="main-translation" class="text-lg text-primary font-medium mt-3 hidden animate-fade-in-up">
+                <!-- Translation will be loaded here -->
             </p>
         </div>
 
@@ -184,10 +197,12 @@
         </div>
     </div>
 
+    <script src="utils/strings.js"></script>
     <script>
         // State
         let currentSampleId = 1;
         const totalSamples = 8; // Update this when adding more samples
+        let showTranslation = false;
 
         // Sidebar Logic
         function toggleSidebar() {
@@ -201,6 +216,14 @@
                 sidebar.classList.add('-translate-x-full');
                 overlay.classList.add('opacity-0', 'invisible');
             }
+        }
+
+        // Translation Logic
+        function toggleTranslation() {
+            showTranslation = !showTranslation;
+
+            // Re-render current data to apply translation toggle to analysis list
+            loadData(currentSampleId);
         }
 
         // Navigation Logic
@@ -245,6 +268,29 @@
             updateButtons();
             generateSampleList(); // Re-render to update active state
 
+            // Update Translation Button Status
+            const btnEl = document.getElementById('btn-translate');
+            if (showTranslation) {
+                btnEl.classList.remove('text-slate-400');
+                btnEl.classList.add('text-primary');
+                // Optional: Add indicator
+                btnEl.innerHTML = `
+                <div class="flex items-center gap-1 font-bold">
+                    <span class="text-xs">ID</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                    </svg>
+                </div>`;
+
+            } else {
+                btnEl.classList.add('text-slate-400');
+                btnEl.classList.remove('text-primary');
+                btnEl.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                    </svg>`;
+            }
+
             const container = document.getElementById('drawer-content');
             // Show loading only if it takes time, but for local files it's instant.
             // We can add a small fade effect instead.
@@ -269,9 +315,20 @@
             // Update Main Title
             const mainTitle = document.getElementById('main-arabic-text');
             const subTitle = document.getElementById('main-transliteration');
+            const translation = document.getElementById('main-translation');
 
             if (mainTitle) mainTitle.textContent = data.arabic;
             if (subTitle) subTitle.textContent = data.transliteration;
+
+            // Render Translation
+            if (translation) {
+                if (showTranslation) {
+                    translation.textContent = data.translation || "Terjemahan belum tersedia.";
+                    translation.classList.remove('hidden');
+                } else {
+                    translation.classList.add('hidden');
+                }
+            }
 
             // Render Analysis
             const container = document.getElementById('drawer-content');
@@ -288,12 +345,38 @@
                             <h4 class="font-arabic text-2xl font-bold text-white mb-2 text-right dir-rtl">${item.word}</h4>
                             
                             <div class="space-y-3">
-                                ${item.details.map(detail => `
-                                <div class="bg-slate-800/50 rounded-xl p-3 border border-slate-700/50 hover:border-${index % 2 === 0 ? 'primary' : 'accent'}/50 transition-colors">
-                                    <span class="text-xs font-bold text-${index % 2 === 0 ? 'primary' : 'accent'} uppercase tracking-wider block mb-1">${detail.label}</span>
-                                    <p class="font-arabic text-lg text-slate-200 text-right dir-rtl ${detail.value.length > 50 ? 'leading-loose' : ''}">${detail.value}</p>
-                                </div>
-                                `).join('')}
+                                ${item.details.map(detail => {
+                    // Logic handle la_mahalla_lahu property or value
+                    let originalValue = detail.value;
+                    if (detail.hasOwnProperty('laMahallaLahu')) {
+                        originalValue = getKeteranganLaMahalla(detail.laMahallaLahu);
+                    } else if (detail.hasOwnProperty('isLahu')) {
+                        // Backward compatibility check just in case
+                        originalValue = getKeteranganLaMahalla(detail.isLahu);
+                    }
+
+                    // Display Logic
+                    // Always show Arabic
+                    let contentHtml = `<p class="font-arabic text-lg text-slate-200 text-right dir-rtl leading-loose">${originalValue}</p>`;
+
+                    // Append Translation if Active
+                    if (showTranslation && detail.terjemah) {
+                        contentHtml += `
+                                        <div class="mt-2 pt-2 border-t border-slate-700/50">
+                                            <p class="font-sans text-sm text-slate-300 text-left">${detail.terjemah}</p>
+                                        </div>
+                                        `;
+                    }
+
+                    let labelClass = `text-${index % 2 === 0 ? 'primary' : 'accent'}`;
+
+                    return `
+                                    <div class="bg-slate-800/50 rounded-xl p-3 border border-slate-700/50 hover:border-${index % 2 === 0 ? 'primary' : 'accent'}/50 transition-colors">
+                                        <span class="text-xs font-bold ${labelClass} uppercase tracking-wider block mb-1">${detail.label}</span>
+                                        ${contentHtml}
+                                    </div>
+                                    `;
+                }).join('')}
                             </div>
                         </div>
                     </div>
@@ -302,9 +385,6 @@
                 `;
                 container.insertAdjacentHTML('beforeend', itemHtml);
             });
-
-            // Add spacer for bottom buttons
-            // container.insertAdjacentHTML('beforeend', '<div class="h-20"></div>');
         }
 
         // Add simple fade-in animation

@@ -2,6 +2,7 @@
     "id": 5,
     "arabic": "كَتَبَ مُحَمَّدٌ الرِّسَالَةَ",
     "transliteration": "Kataba Muhammadun Ar-risalata",
+    "translation": "Muhammad telah menulis surat itu",
     "analysis": [
         {
             "id": 1,
@@ -17,7 +18,8 @@
                 },
                 {
                     "label": "Keterangan",
-                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ"
+                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ",
+                    "laMahallaLahu": true
                 }
             ]
         },

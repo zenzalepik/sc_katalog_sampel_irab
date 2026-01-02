@@ -2,6 +2,7 @@
     "id": 2,
     "arabic": "جَاءَ زَيْدٌ",
     "transliteration": "Jaa-a Zaidun",
+    "translation": "Zaid telah datang",
     "analysis": [
         {
             "id": 1,
@@ -16,8 +17,9 @@
                     "value": "مَبْنِيٌّ عَلَى الْفَتْحِ"
                 },
                 {
-                    "label": "Keterangan",
-                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ"
+                    "label": "Kedudukan (Mahal)",
+                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ",
+                    "laMahallaLahu": true
                 }
             ]
         },
