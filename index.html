@@ -355,8 +355,52 @@
             <script>
                 // State
                 let currentSampleId = 1;
-                const totalSamples = 17; // Update this when adding more samples
                 let showTranslation = false;
+
+                const samples = {
+                    1: "يَذْهَبُ زَيْدٌ",
+                    2: "جَاءَ زَيْدٌ",
+                    3: "لَنْ يَذْهَبَ زَيْدٌ",
+                    4: "لَمْ يَذْهَبْ زَيْدٌ",
+                    5: "جَاءَ الْفَتَى",
+                    6: "الْعِلْمُ نُورٌ",
+                    7: "فِي الْمَسْجِدِ رَجُلٌ",
+                    8: "كَتَبَ مُحَمَّدٌ الرِّسَالَةَ",
+                    9: "يَخْشَى زَيْدٌ رَبَّهُ",
+                    10: "لَنْ يَخْشَى عَدُوَّهُ",
+                    11: "جَاءَ الْقَاضِي",
+                    12: "مَرَرْتُ بِالْقَاضِي",
+                    13: "رَأَيْتُ الْقَاضِيَ",
+                    14: "يَدْعُو زَيْدٌ إِلَى الْحَقِّ ...",
+                    15: "لَنْ يَدْعُوَ زَيْدٌ ...",
+                    16: "جَاءَ غُلَامِيْ ...",
+                    17: "جَاءَ غُلَامٌ ..."
+                };
+
+                // Full text for reference if needed, but truncated for display if too long?
+                // Actually the user wants: "nomor urut + kalimat yang dibaha seperti ("arabic": "جَاءَ الْفَتَى",)"
+                // So I should use the full arabic text.
+                const samplesFull = {
+                    1: "يَذْهَبُ زَيْدٌ",
+                    2: "جَاءَ زَيْدٌ",
+                    3: "لَنْ يَذْهَبَ زَيْدٌ",
+                    4: "لَمْ يَذْهَبْ زَيْدٌ",
+                    5: "جَاءَ الْفَتَى",
+                    6: "الْعِلْمُ نُورٌ",
+                    7: "فِي الْمَسْجِدِ رَجُلٌ",
+                    8: "كَتَبَ مُحَمَّدٌ الرِّسَالَةَ",
+                    9: "يَخْشَى زَيْدٌ رَبَّهُ",
+                    10: "لَنْ يَخْشَى عَدُوَّهُ",
+                    11: "جَاءَ الْقَاضِي",
+                    12: "مَرَرْتُ بِالْقَاضِي",
+                    13: "رَأَيْتُ الْقَاضِيَ",
+                    14: "يَدْعُو زَيْدٌ إِلَى الْحَقِّ وَيَقْضِي بِهِ",
+                    15: "لَنْ يَدْعُوَ زَيْدٌ إِلَى الْبَاطِلِ وَيَقْضِيَ",
+                    16: "جَاءَ غُلَامِيْ وَرَأَيْتُ غُلَامِيْ وَمَرَرْتُ بِغُلَامِيْ",
+                    17: "جَاءَ غُلَامٌ وَرَأَيْتُ غُلَامًا وَمَرَرْتُ بِغُلَامٍ"
+                };
+
+                const totalSamples = Object.keys(samplesFull).length;
 
                 // Sidebar Logic
                 function toggleSidebar() {
@@ -434,8 +478,16 @@
                     list.innerHTML = '';
                     for (let i = 1; i <= totalSamples; i++) {
                         const btn = document.createElement('button');
-                        btn.className = `w-full text-left p-2 rounded-lg transition-colors ${i === currentSampleId ? 'bg-primary/20 text-primary border border-primary/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`;
-                        btn.innerHTML = `<span class="font-bold mr-2">#${i}</span> Sampel ${i}`;
+                        const isActive = i === currentSampleId;
+                        const arabicText = samplesFull[i];
+
+                        btn.className = `w-full text-left p-3 rounded-lg transition-all mb-2 flex flex-col gap-1 border ${isActive ? 'bg-primary/20 text-white border-primary/50 shadow-[0_0_15px_rgba(99,102,241,0.2)]' : 'text-slate-400 hover:bg-slate-800 hover:text-white border-transparent'}`;
+
+                        btn.innerHTML = `
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Sampel #${i}</span>
+                            <span class="font-arabic text-xl dir-rtl text-right w-full block ${isActive ? 'text-primary' : ''}">${arabicText}</span>
+                        `;
+
                         btn.onclick = () => {
                             loadData(i);
                             toggleSidebar();
