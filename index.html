@@ -93,6 +93,15 @@
         </button>
         <div class="text-sm font-bold tracking-widest uppercase text-slate-400">Katalog I'rab</div>
         <div class="flex gap-2">
+            <button onclick="toggleHelpModel()" id="btn-help"
+                class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-white transition-colors"
+                title="Bantuan & Istilah">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
             <button onclick="toggleTranslation()" id="btn-translate"
                 class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -172,109 +181,236 @@
         </div>
     </div>
 
-    <!-- Fixed Bottom Navigation -->
-    <div id="bottom-nav"
-        class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent pointer-events-none transition-transform duration-300">
-        <div class="max-w-3xl mx-auto flex gap-4 pointer-events-auto">
-            <button onclick="prevSample()" id="btn-prev"
-                class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl shadow-lg border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 transform group-hover:-translate-x-1 transition-transform" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-                Kembali
-            </button>
-            <button onclick="nextSample()" id="btn-next"
-                class="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-3 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
-                Lanjut
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-            </button>
+    <!-- Help Modal -->
+    <div id="help-modal" class="fixed inset-0 z-[100] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="toggleHelpModel()">
         </div>
-    </div>
 
-    <script src="utils/strings.js"></script>
-    <script>
-        // State
-        let currentSampleId = 1;
-        const totalSamples = 8; // Update this when adding more samples
-        let showTranslation = false;
+        <!-- Modal Content -->
+        <div
+            class="absolute inset-0 md:inset-x-auto md:top-[10%] md:bottom-[10%] md:w-[600px] md:left-1/2 md:-translate-x-1/2 glass-panel md:rounded-2xl rounded-none flex flex-col shadow-2xl overflow-hidden animate-fade-in-up">
 
-        // Sidebar Logic
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('sidebar-overlay');
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-700/50 flex justify-between items-center bg-slate-900/50">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary">ℹ️</span> Bantuan & Istilah
+                </h3>
+                <button onclick="toggleHelpModel()"
+                    class="p-2 rounded-lg hover:bg-slate-700/50 text-slate-400 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
 
-            if (sidebar.classList.contains('-translate-x-full')) {
-                sidebar.classList.remove('-translate-x-full');
-                overlay.classList.remove('opacity-0', 'invisible');
-            } else {
-                sidebar.classList.add('-translate-x-full');
-                overlay.classList.add('opacity-0', 'invisible');
-            }
-        }
+            <!-- Scrollable Body (Glossary Only) -->
+            <div class="flex-1 overflow-y-auto p-6 custom-scrollbar space-y-4">
 
-        // Translation Logic
-        function toggleTranslation() {
-            showTranslation = !showTranslation;
+                <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
+                    <p class="text-sm text-blue-200">
+                        Berikut adalah penjelasan singkat mengenai istilah-istilah tata bahasa Arab (Nahwu) yang sering
+                        muncul dalam analisis I'rab.
+                    </p>
+                </div>
 
-            // Re-render current data to apply translation toggle to analysis list
-            loadData(currentSampleId);
-        }
+                <div class="space-y-4 text-slate-300">
+                    <!-- I'rab -->
+                    <div class="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl">
+                        <strong class="text-white text-lg block mb-2 border-b border-slate-700 pb-2">I'rab
+                            (إِعْرَاب)</strong>
+                        <p class="text-sm leading-relaxed">Perubahan bunyi atau harakat pada akhir kata karena perbedaan
+                            posisi atau faktor yang memasukinya dalam kalimat.</p>
+                    </div>
 
-        // Navigation Logic
-        function nextSample() {
-            if (currentSampleId < totalSamples) {
-                loadData(currentSampleId + 1);
-            }
-        }
+                    <!-- Rafa' / Marfu' -->
+                    <div class="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl">
+                        <strong class="text-white text-lg block mb-2 border-b border-slate-700 pb-2">Marfu'
+                            (مَرْفُوع)</strong>
+                        <p class="text-sm leading-relaxed">Status kata yang biasanya ditandai dengan harakat
+                            <strong>Dhommah</strong>, atau huruf Wau/Alif/Nun. Biasanya untuk Subjek (Fa'il) atau Awal
+                            Kalimat (Mubtada').
+                        </p>
+                    </div>
 
-        function prevSample() {
-            if (currentSampleId > 1) {
-                loadData(currentSampleId - 1);
-            }
-        }
+                    <!-- Nashab / Manshub -->
+                    <div class="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl">
+                        <strong class="text-white text-lg block mb-2 border-b border-slate-700 pb-2">Manshub
+                            (مَنْصُوب)</strong>
+                        <p class="text-sm leading-relaxed">Status kata yang biasanya ditandai dengan harakat
+                            <strong>Fathah</strong>, atau huruf Alif/Ya. Biasanya untuk Objek (Maf'ul Bih) atau
+                            Keterangan.
+                        </p>
+                    </div>
 
-        function updateButtons() {
-            const btnPrev = document.getElementById('btn-prev');
-            const btnNext = document.getElementById('btn-next');
+                    <!-- Jarr / Majrur -->
+                    <div class="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl">
+                        <strong class="text-white text-lg block mb-2 border-b border-slate-700 pb-2">Majrur
+                            (مَجْرُور)</strong>
+                        <p class="text-sm leading-relaxed">Status kata yang biasanya ditandai dengan harakat
+                            <strong>Kasrah</strong> atau huruf Ya. Biasanya terjadi karena didahului Huruf Jar
+                            (Preposisi).
+                        </p>
+                    </div>
 
-            btnPrev.disabled = currentSampleId <= 1;
-            btnNext.disabled = currentSampleId >= totalSamples;
-        }
+                    <!-- Jazm / Majzum -->
+                    <div class="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl">
+                        <strong class="text-white text-lg block mb-2 border-b border-slate-700 pb-2">Majzum
+                            (مَجْزُوم)</strong>
+                        <p class="text-sm leading-relaxed">Status khusus untuk Kata Kerja (Fi'il) yang biasanya ditandai
+                            dengan <strong>Sukun</strong> atau pembuangan huruf akhir.</p>
+                    </div>
 
-        function generateSampleList() {
-            const list = document.getElementById('sample-list');
-            list.innerHTML = '';
-            for (let i = 1; i <= totalSamples; i++) {
-                const btn = document.createElement('button');
-                btn.className = `w-full text-left p-2 rounded-lg transition-colors ${i === currentSampleId ? 'bg-primary/20 text-primary border border-primary/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`;
-                btn.innerHTML = `<span class="font-bold mr-2">#${i}</span> Sampel ${i}`;
-                btn.onclick = () => {
-                    loadData(i);
-                    toggleSidebar();
-                };
-                list.appendChild(btn);
-            }
-        }
+                    <!-- Mabni -->
+                    <div class="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl">
+                        <strong class="text-white text-lg block mb-2 border-b border-slate-700 pb-2">Mabni
+                            (مَبْنِيّ)</strong>
+                        <p class="text-sm leading-relaxed">Kata yang bentuk akhirnya <strong>tetap/kaku</strong> dan
+                            tidak berubah-ubah meskipun posisinya dalam kalimat berubah.</p>
+                    </div>
 
-        // Data Loading Logic
-        async function loadData(id) {
-            currentSampleId = id;
-            updateButtons();
-            generateSampleList(); // Re-render to update active state
+                    <!-- Mahal -->
+                    <div class="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl">
+                        <strong class="text-white text-lg block mb-2 border-b border-slate-700 pb-2">Mahal
+                            (مَحَلّ)</strong>
+                        <p class="text-sm leading-relaxed"><strong>Kedudukan/Jabatan</strong>. Digunakan untuk menyebut
+                            posisi kata yang Mabni (tetap). Misalnya: "Menempati posisi Rafa'".</p>
+                        <!-- Footer: Contact (Inside Scrollable Area) -->
+                        <div class="mt-8 pt-8 border-t border-slate-700/50 text-center">
+                            <p class="text-slate-400 mb-3 font-medium">Butuh bantuan melalui whatsapp?</p>
+                            <a href="https://wa.me/6281234567890" target="_blank"
+                                class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-8 rounded-full transition-transform active:scale-95 shadow-lg shadow-green-900/20 hover:shadow-green-900/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.637 3.891 1.685 5.462l-1.115 4.073 3.919-1.234zm-3.85-20.193z" />
+                                </svg>
+                                Hubungi Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            // Update Translation Button Status
-            const btnEl = document.getElementById('btn-translate');
-            if (showTranslation) {
-                btnEl.classList.remove('text-slate-400');
-                btnEl.classList.add('text-primary');
-                // Optional: Add indicator
-                btnEl.innerHTML = `
+            <!-- Fixed Bottom Navigation -->
+            <div id="bottom-nav"
+                class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent pointer-events-none transition-transform duration-300">
+                <div class="max-w-3xl mx-auto flex gap-4 pointer-events-auto">
+                    <button onclick="prevSample()" id="btn-prev"
+                        class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl shadow-lg border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 transform group-hover:-translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Kembali
+                    </button>
+                    <button onclick="nextSample()" id="btn-next"
+                        class="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-3 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
+                        Lanjut
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <script src="utils/strings.js"></script>
+            <script>
+                // State
+                let currentSampleId = 1;
+                const totalSamples = 8; // Update this when adding more samples
+                let showTranslation = false;
+
+                // Sidebar Logic
+                function toggleSidebar() {
+                    const sidebar = document.getElementById('sidebar');
+                    const overlay = document.getElementById('sidebar-overlay');
+
+                    if (sidebar.classList.contains('-translate-x-full')) {
+                        sidebar.classList.remove('-translate-x-full');
+                        overlay.classList.remove('opacity-0', 'invisible');
+                    } else {
+                        sidebar.classList.add('-translate-x-full');
+                        overlay.classList.add('opacity-0', 'invisible');
+                    }
+                }
+
+                // Translation Logic
+                function toggleTranslation() {
+                    showTranslation = !showTranslation;
+
+                    // Re-render current data to apply translation toggle to analysis list
+                    loadData(currentSampleId);
+                }
+
+                // Help Modal Logic
+                function toggleHelpModel() {
+                    const modal = document.getElementById('help-modal');
+                    const bottomNav = document.getElementById('bottom-nav');
+
+                    if (modal.classList.contains('hidden')) {
+                        modal.classList.remove('hidden');
+                        bottomNav.classList.add('hidden');
+                    } else {
+                        modal.classList.add('hidden');
+                        bottomNav.classList.remove('hidden');
+                    }
+                }
+
+                // Navigation Logic
+                function nextSample() {
+                    if (currentSampleId < totalSamples) {
+                        loadData(currentSampleId + 1);
+                    }
+                }
+
+                function prevSample() {
+                    if (currentSampleId > 1) {
+                        loadData(currentSampleId - 1);
+                    }
+                }
+
+                function updateButtons() {
+                    const btnPrev = document.getElementById('btn-prev');
+                    const btnNext = document.getElementById('btn-next');
+
+                    btnPrev.disabled = currentSampleId <= 1;
+                    btnNext.disabled = currentSampleId >= totalSamples;
+                }
+
+                function generateSampleList() {
+                    const list = document.getElementById('sample-list');
+                    list.innerHTML = '';
+                    for (let i = 1; i <= totalSamples; i++) {
+                        const btn = document.createElement('button');
+                        btn.className = `w-full text-left p-2 rounded-lg transition-colors ${i === currentSampleId ? 'bg-primary/20 text-primary border border-primary/30' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`;
+                        btn.innerHTML = `<span class="font-bold mr-2">#${i}</span> Sampel ${i}`;
+                        btn.onclick = () => {
+                            loadData(i);
+                            toggleSidebar();
+                        };
+                        list.appendChild(btn);
+                    }
+                }
+
+                // Data Loading Logic
+                async function loadData(id) {
+                    currentSampleId = id;
+                    updateButtons();
+                    generateSampleList(); // Re-render to update active state
+
+                    // Update Translation Button Status
+                    const btnEl = document.getElementById('btn-translate');
+                    if (showTranslation) {
+                        btnEl.classList.remove('text-slate-400');
+                        btnEl.classList.add('text-primary');
+                        // Optional: Add indicator
+                        btnEl.innerHTML = `
                 <div class="flex items-center gap-1 font-bold">
                     <span class="text-xs">ID</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -282,60 +418,60 @@
                     </svg>
                 </div>`;
 
-            } else {
-                btnEl.classList.add('text-slate-400');
-                btnEl.classList.remove('text-primary');
-                btnEl.innerHTML = `
+                    } else {
+                        btnEl.classList.add('text-slate-400');
+                        btnEl.classList.remove('text-primary');
+                        btnEl.innerHTML = `
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                     </svg>`;
-            }
+                    }
 
-            const container = document.getElementById('drawer-content');
-            // Show loading only if it takes time, but for local files it's instant.
-            // We can add a small fade effect instead.
+                    const container = document.getElementById('drawer-content');
+                    // Show loading only if it takes time, but for local files it's instant.
+                    // We can add a small fade effect instead.
 
-            try {
-                const response = await fetch(`datas/${id}.json`);
-                if (!response.ok) throw new Error('Gagal memuat data');
-                const data = await response.json();
-                renderData(data);
-            } catch (error) {
-                console.error('Error:', error);
-                container.innerHTML = `
+                    try {
+                        const response = await fetch(`datas/${id}.json`);
+                        if (!response.ok) throw new Error('Gagal memuat data');
+                        const data = await response.json();
+                        renderData(data);
+                    } catch (error) {
+                        console.error('Error:', error);
+                        container.innerHTML = `
                     <div class="flex flex-col items-center justify-center h-full text-red-400 text-center">
                         <p>Gagal memuat data sampel ${id}.</p>
                         <p class="text-sm text-slate-500 mt-2">Pastikan file datas/${id}.json ada.</p>
                     </div>
                 `;
-            }
-        }
-
-        function renderData(data) {
-            // Update Main Title
-            const mainTitle = document.getElementById('main-arabic-text');
-            const subTitle = document.getElementById('main-transliteration');
-            const translation = document.getElementById('main-translation');
-
-            if (mainTitle) mainTitle.textContent = data.arabic;
-            if (subTitle) subTitle.textContent = data.transliteration;
-
-            // Render Translation
-            if (translation) {
-                if (showTranslation) {
-                    translation.textContent = data.translation || "Terjemahan belum tersedia.";
-                    translation.classList.remove('hidden');
-                } else {
-                    translation.classList.add('hidden');
+                    }
                 }
-            }
 
-            // Render Analysis
-            const container = document.getElementById('drawer-content');
-            container.innerHTML = '';
+                function renderData(data) {
+                    // Update Main Title
+                    const mainTitle = document.getElementById('main-arabic-text');
+                    const subTitle = document.getElementById('main-transliteration');
+                    const translation = document.getElementById('main-translation');
 
-            data.analysis.forEach((item, index) => {
-                const itemHtml = `
+                    if (mainTitle) mainTitle.textContent = data.arabic;
+                    if (subTitle) subTitle.textContent = data.transliteration;
+
+                    // Render Translation
+                    if (translation) {
+                        if (showTranslation) {
+                            translation.textContent = data.translation || "Terjemahan belum tersedia.";
+                            translation.classList.remove('hidden');
+                        } else {
+                            translation.classList.add('hidden');
+                        }
+                    }
+
+                    // Render Analysis
+                    const container = document.getElementById('drawer-content');
+                    container.innerHTML = '';
+
+                    data.analysis.forEach((item, index) => {
+                        const itemHtml = `
                 <div class="group animate-fade-in-up" style="animation-delay: ${index * 100}ms">
                     <div class="flex items-start gap-4">
                         <div class="w-10 h-10 rounded-full bg-${index % 2 === 0 ? 'primary' : 'accent'}/20 flex items-center justify-center text-${index % 2 === 0 ? 'primary' : 'accent'} font-bold text-lg border border-${index % 2 === 0 ? 'primary' : 'accent'}/30 shrink-0">
@@ -346,50 +482,50 @@
                             
                             <div class="space-y-3">
                                 ${item.details.map(detail => {
-                    // Logic handle la_mahalla_lahu property or value
-                    let originalValue = detail.value;
-                    if (detail.hasOwnProperty('laMahallaLahu')) {
-                        originalValue = getKeteranganLaMahalla(detail.laMahallaLahu);
-                    } else if (detail.hasOwnProperty('isLahu')) {
-                        // Backward compatibility check just in case
-                        originalValue = getKeteranganLaMahalla(detail.isLahu);
-                    }
+                            // Logic handle la_mahalla_lahu property or value
+                            let originalValue = detail.value;
+                            if (detail.hasOwnProperty('laMahallaLahu')) {
+                                originalValue = getKeteranganLaMahalla(detail.laMahallaLahu);
+                            } else if (detail.hasOwnProperty('isLahu')) {
+                                // Backward compatibility check just in case
+                                originalValue = getKeteranganLaMahalla(detail.isLahu);
+                            }
 
-                    // Display Logic
-                    // Always show Arabic
-                    let contentHtml = `<p class="font-arabic text-lg text-slate-200 text-right dir-rtl leading-loose">${originalValue}</p>`;
+                            // Display Logic
+                            // Always show Arabic
+                            let contentHtml = `<p class="font-arabic text-lg text-slate-200 text-right dir-rtl leading-loose">${originalValue}</p>`;
 
-                    // Append Translation if Active
-                    if (showTranslation && detail.terjemah) {
-                        contentHtml += `
+                            // Append Translation if Active
+                            if (showTranslation && detail.terjemah) {
+                                contentHtml += `
                                         <div class="mt-2 pt-2 border-t border-slate-700/50">
                                             <p class="font-sans text-sm text-slate-300 text-left">${detail.terjemah}</p>
                                         </div>
                                         `;
-                    }
+                            }
 
-                    let labelClass = `text-${index % 2 === 0 ? 'primary' : 'accent'}`;
+                            let labelClass = `text-${index % 2 === 0 ? 'primary' : 'accent'}`;
 
-                    return `
+                            return `
                                     <div class="bg-slate-800/50 rounded-xl p-3 border border-slate-700/50 hover:border-${index % 2 === 0 ? 'primary' : 'accent'}/50 transition-colors">
                                         <span class="text-xs font-bold ${labelClass} uppercase tracking-wider block mb-1">${detail.label}</span>
                                         ${contentHtml}
                                     </div>
                                     `;
-                }).join('')}
+                        }).join('')}
                             </div>
                         </div>
                     </div>
                 </div>
                 ${index < data.analysis.length - 1 ? '<div class="w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-4"></div>' : ''}
                 `;
-                container.insertAdjacentHTML('beforeend', itemHtml);
-            });
-        }
+                        container.insertAdjacentHTML('beforeend', itemHtml);
+                    });
+                }
 
-        // Add simple fade-in animation
-        const style = document.createElement('style');
-        style.textContent = `
+                // Add simple fade-in animation
+                const style = document.createElement('style');
+                style.textContent = `
             @keyframes fadeInUp {
                 from { opacity: 0; transform: translateY(20px); }
                 to { opacity: 1; transform: translateY(0); }
@@ -398,52 +534,52 @@
                 animation: fadeInUp 0.5s ease-out forwards;
             }
         `;
-        document.head.appendChild(style);
+                document.head.appendChild(style);
 
-        // Full Screen Logic
-        function toggleFullScreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(err => {
-                    console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-                });
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
+                // Full Screen Logic
+                function toggleFullScreen() {
+                    if (!document.fullscreenElement) {
+                        document.documentElement.requestFullscreen().catch(err => {
+                            console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                        });
+                    } else {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        }
+                    }
                 }
-            }
-        }
 
-        function updateFullScreenUI() {
-            const btn = document.getElementById('btn-fullscreen');
-            const bottomNav = document.getElementById('bottom-nav');
-            const isFullScreen = !!document.fullscreenElement;
+                function updateFullScreenUI() {
+                    const btn = document.getElementById('btn-fullscreen');
+                    const bottomNav = document.getElementById('bottom-nav');
+                    const isFullScreen = !!document.fullscreenElement;
 
-            if (isFullScreen) {
-                // Change icon to Exit Full Screen
-                btn.innerHTML = `
+                    if (isFullScreen) {
+                        // Change icon to Exit Full Screen
+                        btn.innerHTML = `
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 `;
-                // Hide bottom nav
-                bottomNav.classList.add('translate-y-full');
-            } else {
-                // Change icon to Enter Full Screen
-                btn.innerHTML = `
+                        // Hide bottom nav
+                        bottomNav.classList.add('translate-y-full');
+                    } else {
+                        // Change icon to Enter Full Screen
+                        btn.innerHTML = `
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                     </svg>
                 `;
-                // Show bottom nav
-                bottomNav.classList.remove('translate-y-full');
-            }
-        }
+                        // Show bottom nav
+                        bottomNav.classList.remove('translate-y-full');
+                    }
+                }
 
-        document.addEventListener('fullscreenchange', updateFullScreenUI);
+                document.addEventListener('fullscreenchange', updateFullScreenUI);
 
-        // Init
-        loadData(1);
-    </script>
+                // Init
+                loadData(1);
+            </script>
 </body>
 
 </html>
