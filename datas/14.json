@@ -20,7 +20,7 @@
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْوَاوِ لِلثِّقَلِ",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْوَاوِ لِلثِّقَلِ",
                     "terjemah": "Tanda rafa'-nya adalah dhommah yang dikira-kira di atas Wau karena berat"
                 }
             ]
@@ -41,56 +41,127 @@
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
                     "terjemah": "Tanda rafa'-nya adalah dhommah yang nampak di akhirnya"
                 }
             ]
         },
         {
             "id": 3,
-            "word": "إِلَى الْحَقِّ",
+            "word": "إِلَى",
             "details": [
                 {
-                    "label": "Jar Majrur",
-                    "value": "إِلَى: حَرْفُ جَرٍّ، الْحَقِّ: اِسْمٌ مَجْرُورٌ",
-                    "terjemah": "Ila: Huruf Jar, Al-Haqqi: Isim Majrur"
+                    "label": "Jenis Kata",
+                    "value": "حَرْفُ جَرٍّ",
+                    "terjemah": "Huruf Jar"
                 },
                 {
-                    "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ جَرِّ الْحَقِّ الْكَسْرَةُ الظَّاهِرَةُ",
-                    "terjemah": "Tanda jar Al-Haqq adalah kasrah yang nampak"
+                    "label": "Keterangan",
+                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ",
+                    "laMahallaLahu": true,
+                    "terjemah": "Tidak ada kedudukan dalam I'rab baginya"
                 }
             ]
         },
         {
             "id": 4,
-            "word": "وَيَقْضِي",
+            "word": "الْحَقِّ",
             "details": [
                 {
-                    "label": "Athof",
-                    "value": "الْوَاوُ حَرْفُ عَطْفٍ",
-                    "terjemah": "Wau adalah Huruf Athof (Kata Sambung)"
+                    "label": "Posisi (Mahal)",
+                    "value": "اِسْمٌ مَجْرُورٌ بِـ(إِلَى)",
+                    "terjemah": "Isim Majrur dengan huruf (Ila)"
                 },
                 {
-                    "label": "Fi'il",
-                    "value": "يَقْضِي: فِعْلٌ مُضَارِعٌ مَرْفُوعٌ لِأَنَّهُ مَعْطُوفٌ عَلَى (يَدْعُو)",
-                    "terjemah": "Yaqdhi: Fi'il Mudhari' Marfu' karena dia diathofkan (disambungkan) kepada (Yad'u)"
+                    "label": "Status (I'rab)",
+                    "value": "مَجْرُورٌ",
+                    "terjemah": "Majrur (Jar)"
                 },
                 {
                     "label": "Tanda I'rab",
-                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْيَاءِ لِلثِّقَلِ",
-                    "terjemah": "Tanda rafa'-nya adalah dhommah yang dikira-kira di atas Ya karena berat"
+                    "value": "وَعَلَامَةُ جَرِّهِ الْكَسْرَةُ الظَّاهِرَةُ عَلَى آخِرِهِ",
+                    "terjemah": "Tanda jar-nya adalah kasrah yang nampak di akhirnya"
                 }
             ]
         },
         {
             "id": 5,
-            "word": "بِهِ",
+            "word": "وَ",
             "details": [
                 {
-                    "label": "Jar Majrur",
-                    "value": "الْبَاءُ حَرْفُ جَرٍّ، وَالْهَاءُ ضَمِيرٌ مَبْنِيٌّ فِي مَحَلِّ جَرٍّ",
-                    "terjemah": "Ba Huruf Jar, dan Ha adalah Dhamir Mabni menempati posisi Jar"
+                    "label": "Jenis Kata",
+                    "value": "حَرْفُ عَطْفٍ",
+                    "terjemah": "Huruf Athof (Kata Sambung)"
+                },
+                {
+                    "label": "Keterangan",
+                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ",
+                    "laMahallaLahu": true,
+                    "terjemah": "Tidak ada kedudukan dalam I'rab baginya"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "word": "يَقْضِي",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "فِعْلٌ مُضَارِعٌ",
+                    "terjemah": "Kata Kerja Sekarang (Fi'il Mudhari')"
+                },
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "مَعْطُوفٌ عَلَى (يَدْعُو)",
+                    "terjemah": "Ma'thuf (yang di-athaf-kan) kepada (Yad'u)"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "وَالْمَعْطُوفُ عَلَى الْمَرْفُوعِ مَرْفُوعٌ مِثْلُهُ",
+                    "terjemah": "Dan yang di-athaf-kan kepada yang marfu', maka ia marfu' sepertinya"
+                },
+                {
+                    "label": "Tanda I'rab",
+                    "value": "وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الْمُقَدَّرَةُ عَلَى الْيَاءِ لِلثِّقَلِ",
+                    "terjemah": "Tanda rafa'-nya adalah dhommah yang dikira-kira di atas Ya' karena berat"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "word": "بِ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "حَرْفُ جَرٍّ",
+                    "terjemah": "Huruf Jar"
+                },
+                {
+                    "label": "Keterangan",
+                    "value": "لَا مَحَلَّ لَهُ مِنَ الْإِعْرَابِ",
+                    "laMahallaLahu": true,
+                    "terjemah": "Tidak ada kedudukan dalam I'rab baginya"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "word": "هِ",
+            "details": [
+                {
+                    "label": "Jenis Kata",
+                    "value": "ضَمِيرٌ مُتَّصِلٌ",
+                    "terjemah": "Dhamir Muttashil (kata ganti yang bersambung)"
+                },
+                {
+                    "label": "Posisi (Mahal)",
+                    "value": "اِسْمٌ مَجْرُورٌ بِـ(الْبَاءِ)",
+                    "terjemah": "Isim Majrur dengan huruf (Ba')"
+                },
+                {
+                    "label": "Status (I'rab)",
+                    "value": "مَبْنِيٌّ عَلَى الْكَسْرِ فِي مَحَلِّ جَرٍّ",
+                    "terjemah": "Mabni di atas kasrah dalam kedudukan Jar"
                 }
             ]
         }
